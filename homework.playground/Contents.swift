@@ -15,7 +15,7 @@ protocol HomeworkService {
     func filter(array: [Int], condition: ((Int) -> Bool)) -> [Int]
 }
 
-struct the_struct{
+struct the_struct: HomeworkService{
     // Функция деления с остатком, должна вернуть в первой части результат деления, во второй части остаток.
     func divideWithRemainder(_ x: Int, by y: Int) -> (Int, Int){
         let answer_1: Int = x / y
@@ -76,6 +76,16 @@ struct the_struct{
         return new_array
     }
 }
+
+protocol service {
+    func ask(cost: Int)->Bool
+}
+
+protocol room {
+    func places(slots: Int)->Bool
+    
+}
+
 var some_struct = the_struct()
 var some_string = ["qwe","rty","uio","prt"]
 some_struct.firstLetter(strings: some_string)
